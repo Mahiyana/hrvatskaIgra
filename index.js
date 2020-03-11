@@ -25,8 +25,9 @@ function getAnswer(question){
         }
     } else if (question <= 999) {
         answer = numbers["hundrets"][Math.floor(question/100)*100];
-        if (question % 100 !== 0) {
-            answer += " " + numbers["ties"][Math.floor((question - Math.floor(question/100)*100)/10)*10];
+        var ties = Math.floor((question - Math.floor(question/100)*100)/10)*10
+        if (ties !== 0 && question % 100 !== 0) {
+            answer += " " + numbers["ties"][ties];
         }
         if (question % 10 !== 0) {
             answer += " " + numbers["ones"][question - Math.floor(question/10)*10];
