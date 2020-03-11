@@ -33,7 +33,7 @@ numbers = {
         "80": "osamdeset",
         "90": "devedeset"
     },
-    "hundrets": {
+    "hundreds": {
         "100": "sto",
         "200": "dvjesto",
         "300": "tristo",

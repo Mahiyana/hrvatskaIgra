@@ -35,7 +35,7 @@ function getNumberLessThan999(question, beforeThousand = false){
             } 
         }
     } else if (question <= 999) {
-        answer = numbers["hundrets"][Math.floor(question/100)*100];
+        answer = numbers["hundreds"][Math.floor(question/100)*100];
         var ties = Math.floor((question - Math.floor(question/100)*100)/10)*10
         if (ties !== 0 && question % 100 !== 0 && ties !== 10) {
             answer += " " + numbers["ties"][ties];
