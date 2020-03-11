@@ -2,13 +2,15 @@ var points = 0
 var question;
 
 function getQuestion(){
-  return Math.floor(Math.random() * 10); 
+  return Math.floor(Math.random() * 20); 
 }
 
 function getAnswer(question){
   var answer;
   if (question <= 9) {
       answer = numbers["ones"][question];
+  } else if (question <= 19) {
+      answer = numbers["teens"][question];
   }
   return answer;
 }
