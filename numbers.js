@@ -45,3 +45,7 @@ numbers = {
         "900": "devetsto"
     },
 }
+
+try {
+    module.exports.numbers = numbers;
+} catch (e) {}
