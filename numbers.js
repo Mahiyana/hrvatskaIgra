@@ -31,6 +31,17 @@ numbers = {
         "60": "šezdeset",
         "70": "sedamdeset",
         "80": "osamdeset",
-        "90": "devedeset",
-    }
+        "90": "devedeset"
+    },
+    "hundrets": {
+        "100": "sto",
+        "200": "dvjesto",
+        "300": "tristo",
+        "400": "četiristo",
+        "500": "petsto",
+        "600": "šesto",
+        "700": "sedamsto",
+        "800": "osamsto",
+        "900": "devetsto"
+    },
 }
