@@ -1,6 +1,13 @@
 var points = 0
 var question;
 
+document.getElementById("userAnswer").addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    checkAnswer();
+  }
+}); 
+
 function getQuestion(){
   return Math.floor(Math.random() * 20); 
 }
