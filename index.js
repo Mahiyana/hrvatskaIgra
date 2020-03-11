@@ -9,7 +9,7 @@ document.getElementById("userAnswer").addEventListener("keyup", function(event) 
 }); 
 
 function getQuestion(){
-  return Math.floor(Math.random() * 20); 
+  return Math.floor(Math.random() * 100); 
 }
 
 function getAnswer(question){
@@ -18,6 +18,11 @@ function getAnswer(question){
       answer = numbers["ones"][question];
   } else if (question <= 19) {
       answer = numbers["teens"][question];
+  } else if (question <= 99) {
+      answer = numbers["ties"][Math.floor(question/10)*10];
+      if (question % 10 !== 0) {
+          answer += " " + numbers["ones"][question - Math.floor(question/10)*10]
+      }
   }
   return answer;
 }

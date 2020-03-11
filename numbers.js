@@ -22,5 +22,16 @@ numbers = {
     "17": "sedamnaest",
     "18": "osamnaest",
     "19": "devetnaest"
+  },
+  "ties": {
+    "20": "dvadeset",
+    "30": "trideset",
+    "40": "četrdeset",
+    "50": "pedeset",
+    "60": "šezdeset",
+    "70": "sedamdeset",
+    "80": "osamdeset",
+    "90": "devedeset",
   }
+
 }
