@@ -1,4 +1,10 @@
-function getNumberLessThan999(question, beforeThousand = false){
+function getCardinalNumberQuestionAndAnswer(){
+    var question = Math.floor(Math.random() * 100000); 
+    var answer = getCardinalNumberAnswer(question);
+    return [question,answer];
+}
+
+function getCardinalNumberLessThan999(question, beforeThousand = false){
     var answer;
     if (question <= 9) {
         if (beforeThousand && (question === 1 || question === 2)){
@@ -41,14 +47,14 @@ function getNumberLessThan999(question, beforeThousand = false){
     return answer;
 }
 
-function getAnswer(question){
+function getCardinalNumberAnswer(question){
     var answer;
     if (question <= 999) {
-        answer = getNumberLessThan999(question);
+        answer = getCardinalNumberLessThan999(question);
     } else {
         var firstPart = Math.floor(question/1000);
         var secondPart = question % 1000;
-        answer = getNumberLessThan999(firstPart, true);
+        answer = getCardinalNumberLessThan999(firstPart, true);
         lastDigit = firstPart % 10 // from first part
         middleDigit = firstPart - (firstPart-(firstPart%100)) - firstPart%10; // from first part
         if(middleDigit === 10 || lastDigit === 5 || lastDigit === 6 || lastDigit === 7 || lastDigit === 8 || lastDigit === 9 || lastDigit === 0){
@@ -61,13 +67,13 @@ function getAnswer(question){
             answer += " tisuća";
         }
         if (secondPart !=0) {
-            answer += " " + getNumberLessThan999(secondPart);
+            answer += " " + getCardinalNumberLessThan999(secondPart);
         }
     }
     return answer.trim();
 }
 
 try {
-    module.exports.getNumberLessThan999 = getNumberLessThan999;
-    module.exports.getAnswer = getAnswer;
+    module.exports.getCardinalNumberLessThan999 = getCardinalNumberLessThan999;
+    module.exports.getCardinalNumberAnswer = getCardinalNumberAnswer;
 } catch (e) {}

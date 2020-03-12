@@ -1,8 +1,8 @@
-var functions = require('./number_functions');
+var functions = require('./cardinal_number_functions');
 var numbers = require('./numbers');
 numbers = numbers["numbers"]
 
-testCases = {
+cardinalNumbersTestCases = {
     1: "jedan",
     11: "jedanaest",
     111: "sto jedanaest",
@@ -48,9 +48,9 @@ testCases = {
 
 
 error = false;
-for (const [key, value] of Object.entries(testCases)) {
-  if(functions.getAnswer(key) != value) {
-      console.error(key, value, "!=", functions.getAnswer(key));
+for (const [question, answer] of Object.entries(cardinalNumbersTestCases)) {
+  if(functions.getCardinalNumberAnswer(question) != answer) {
+      console.error(question, answer, "!=", functions.getCardinalNumberAnswer(question));
       error = true;
   }
 }
