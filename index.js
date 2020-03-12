@@ -20,6 +20,10 @@ var questionSentence = {
     4: "Koliko je sati?",
 }
 
+function changeMode(newMode){
+    menuMode = newMode;
+    reloadQuestion();
+}
 
 function writeLetter(letter){ //TODO change to writing where the cursor is instead of appending at the end
     currentAnswer = document.getElementById("userAnswer").value;

@@ -6,6 +6,7 @@
 
 .menu-item {
   padding: 10px;
+  cursor: pointer;
 }
 
 #points-div {
