@@ -12,7 +12,7 @@ function getNumberLessThan999(question, beforeThousand = false){
     } else if (question <= 99) {
         answer = numbers["ties"][Math.floor(question/10)*10];
         if (question % 10 !== 0) {
-            var ones = question - Math.floor(question/10)*10;
+            var ones = question % 10;
             if (beforeThousand && (ones === 1 || ones === 2)){
                 if (ones === 1) { answer += " jedna"}
                 if (ones === 2) { answer += " dvije"}
@@ -20,7 +20,7 @@ function getNumberLessThan999(question, beforeThousand = false){
                 answer += " " + numbers["ones"][ones];
             } 
         }
-    } else if (question <= 999) {
+    } else {
         answer = numbers["hundreds"][Math.floor(question/100)*100];
         var ties = Math.floor((question - Math.floor(question/100)*100)/10)*10
         if (ties !== 0 && question % 100 !== 0 && ties !== 10) {
@@ -47,7 +47,7 @@ function getAnswer(question){
         answer = getNumberLessThan999(question);
     } else {
         var firstPart = Math.floor(question/1000);
-        var secondPart = question - firstPart*1000;
+        var secondPart = question % 1000;
         answer = getNumberLessThan999(firstPart, true);
         lastDigit = firstPart % 10 // from first part
         middleDigit = firstPart - (firstPart-(firstPart%100)) - firstPart%10; // from first part

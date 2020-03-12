@@ -31,9 +31,9 @@ function initialize(){
             event.preventDefault();
             checkAnswer();
         }
-    }); 
+    });
+    reloadQuestion();
 }
 
 
 initialize();
-reloadQuestion();
