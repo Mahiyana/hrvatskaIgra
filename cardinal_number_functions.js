@@ -11,28 +11,28 @@ function getCardinalNumberLessThan999(question, beforeThousand = false){
             if (question === 1) { answer = ""}
             if (question === 2) { answer = "dvije"}
         } else {
-            answer = numbers["ones"][question];
+            answer = cardinalNumbers["ones"][question];
         }
     } else if (question <= 19) {
-        answer = numbers["teens"][question];
+        answer = cardinalNumbers["teens"][question];
     } else if (question <= 99) {
-        answer = numbers["ties"][Math.floor(question/10)*10];
+        answer = cardinalNumbers["ties"][Math.floor(question/10)*10];
         if (question % 10 !== 0) {
             var ones = question % 10;
             if (beforeThousand && (ones === 1 || ones === 2)){
                 if (ones === 1) { answer += " jedna"}
                 if (ones === 2) { answer += " dvije"}
             } else {
-                answer += " " + numbers["ones"][ones];
+                answer += " " + cardinalNumbers["ones"][ones];
             } 
         }
     } else {
-        answer = numbers["hundreds"][Math.floor(question/100)*100];
+        answer = cardinalNumbers["hundreds"][Math.floor(question/100)*100];
         var ties = Math.floor((question - Math.floor(question/100)*100)/10)*10
         if (ties !== 0 && question % 100 !== 0 && ties !== 10) {
-            answer += " " + numbers["ties"][ties];
+            answer += " " + cardinalNumbers["ties"][ties];
         } else if (ties !== 0 && question % 100 !== 0) {
-           answer += " " + numbers["teens"][question % 100];
+           answer += " " + cardinalNumbers["teens"][question % 100];
         }
         if (question % 10 !== 0 && ties !== 10) {
             var ones = question - Math.floor(question/10)*10;
@@ -40,7 +40,7 @@ function getCardinalNumberLessThan999(question, beforeThousand = false){
                 if (ones === 1) { answer += " jedna"}
                 if (ones === 2) { answer += " dvije"}
             } else {
-                answer += " " + numbers["ones"][ones];
+                answer += " " + cardinalNumbers["ones"][ones];
             } 
         }
     }

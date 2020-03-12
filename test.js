@@ -1,6 +1,6 @@
 var functions = require('./cardinal_number_functions');
-var numbers = require('./numbers');
-numbers = numbers["numbers"]
+var cardinalNumbers = require('./cardinal_numbers_data');
+cardinalNumbers = cardinalNumbers["numbers"]
 
 cardinalNumbersTestCases = {
     1: "jedan",

@@ -1,4 +1,4 @@
-numbers = {
+cardinalNumbers = {
     "ones": {
         "0": "nula",
         "1": "jedan",
