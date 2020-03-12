@@ -1,0 +1,52 @@
+#menu-div {    
+  display: flex;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.menu-item {
+  padding: 10px;
+}
+
+#points-div {
+  margin-left: auto;
+}
+
+#points {
+  font-size: 30px;
+}
+
+#question-div {
+  margin: auto;
+  width: 50%;
+  padding-bottom: 50px;
+}
+
+#question {
+  margin: auto;
+  width: 50%;
+  font-size: 40px;
+}
+
+#answer-div {
+  margin: auto;
+  width: 50%;
+}
+
+#inputs-div {
+  width: 80%;
+}
+
+input {
+  width: 100%;
+}
+
+#buttons-div{
+  margin: auto;
+  display: flex;
+  width: 50%;
+}
+
+#check-button {
+  margin: auto;
+}
