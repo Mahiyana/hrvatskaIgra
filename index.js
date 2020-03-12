@@ -1,6 +1,12 @@
 var points = 0
 var question;
 
+function writeLetter(letter){
+    currentAnswer = document.getElementById("userAnswer").value.trim();
+    document.getElementById("userAnswer").value = currentAnswer + letter;
+    document.getElementById("userAnswer").focus();
+}
+
 function getQuestion(){
     return Math.floor(Math.random() * 100000); 
 }
