@@ -1,3 +1,8 @@
+try {
+    var data = require('./data');
+    var cardinalNumbers = data.cardinalNumbers;
+} catch (e) {}
+
 function getCardinalNumberQuestionAndAnswer(){
     var question = Math.floor(Math.random() * 100000); 
     var answer = getCardinalNumberAnswer(question);

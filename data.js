@@ -142,6 +142,7 @@ var monthsInGenitiv = [
     "studenoga",
     "prosinaca"
 ];
+
 try {
     module.exports.cardinalNumbers = cardinalNumbers;
     module.exports.genderArray = genderArray;
