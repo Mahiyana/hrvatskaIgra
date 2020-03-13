@@ -1,6 +1,10 @@
 function getTimeQuestionAndAnswer(){
     var questionNumbers = getTimeQuestion();
-    var question = questionNumbers[0] + ":" + questionNumbers[1];
+    var questionString = questionNumbers[1];
+    if (questionString <= 9) {
+        questionString = "0" + questionString;
+    }
+    var question = questionNumbers[0] + ":" + questionString;
     var answer = getTimeAnswer(questionNumbers[0], questionNumbers[1]);
     return [question, answer];
 }
@@ -28,14 +32,26 @@ function getTimeAnswer(hour, minutes) {
     }
 
     if (minutes <= 9) {
-        answer += cardinalNumbers["ones"][minutes];
+        if (minutes == 1) {
+            answer += " jedna";
+        } else if (answer == 2) {
+            answer += " dvije";
+        } else {
+            answer += " " + cardinalNumbers["ones"][minutes];
+        }
     } else if (minutes <= 19) {
         answer += cardinalNumbers["teens"][minutes];
     } else if (minutes <= 99) {
         answer += cardinalNumbers["ties"][Math.floor(minutes/10)*10];
         if (minutes % 10 !== 0) {
             var ones = minutes % 10;
-            answer += " " + cardinalNumbers["ones"][ones];
+            if (ones == 1) {
+                answer += " jedna";
+            } else if (ones == 2) {
+                answer += " dvije";
+            } else {
+                answer += " " + cardinalNumbers["ones"][ones];
+            }
         }
     } 
 
