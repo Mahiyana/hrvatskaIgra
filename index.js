@@ -70,6 +70,7 @@ function reloadQuestion(){
     document.getElementById("question-sentence").innerHTML = questionSentence[modeForQuestions];
     document.getElementById("question").innerHTML = question;
     document.getElementById("userAnswer").value = "";
+    document.getElementById("userAnswer").focus();
 }
 
 function initialize(){
