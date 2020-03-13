@@ -1,11 +1,11 @@
-ordinableNouns = {
+var ordinableNouns = {
     "masculine": ["avion", "auto", "telefon", "poklon", "sladoled", "kofer", "autobus", "tata", "dio", "odgovor"],
     "feminine": ["obitelj", "bilježnica", "olovka", "torba", "kuća", "rajčica", "rakija", "ploča", "razlika", "slika"],
     "neuter": ["stablo", "more", "koljeno", "odijelo", "brdo", "grožđe", "pivo", "djelo", "društvo", "jaje"]
 }
 
 // obviously without last morpheme
-ordinalNumbers = {
+var ordinalNumbers = {
     "ones": {
         "1": "prv",
         "2": "drug",
@@ -41,3 +41,5 @@ ordinalNumbers = {
         "10000": "deset tisićit",
     }
 }
+
+var numberMorpheme = ["i", "a", "o"]

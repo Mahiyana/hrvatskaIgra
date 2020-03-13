@@ -6,7 +6,7 @@ function getCardinalNumberWithNounQuestionAndAnswer(){
 }
 
 function getCardinalNumberWithNounAnswer(noun, number){
-    var gender = checkGender(noun);    
+    var gender = checkGenderCNWN(noun);    
     var onesArray = ["jedan", "jedna", "jedno"];
     var twosArray = ["dva", "dvije", "dva"];
     var answer;
@@ -60,7 +60,7 @@ function getCardinalNumberWithNounQuestion(){
     return [noun, number]
 }
 
-function checkGender(noun){
+function checkGenderCNWN(noun){
    if (masculineNouns.includes(noun)) { 
        return 0; 
    } else if (feminineNouns.includes(noun)){
