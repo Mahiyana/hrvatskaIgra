@@ -1,5 +1,9 @@
 function getCardinalNumberWithNounQuestionAndAnswer(){ //TODO divide into two functions to make it testable (and more usable)
-    var nounSet = nounsWithCases[Math.floor(Math.random() * nounsWithCases.length)];
+    // 0-masculine, 1-feminine, 2-neuter
+    var gender = Math.floor(Math.random() * 3); 
+    var onesArray = ["jedan", "jedna", "jedno"];
+    var twosArray = ["dva", "dvije", "dva"];
+    var nounSet = nounsWithCases[gender][Math.floor(Math.random() * nounsWithCases.length)];
     var questionNumber = Math.floor(Math.random() * 99) + 1;
     var question = nounSet[0] + " ☓" + questionNumber;
     var answer;
@@ -7,6 +11,14 @@ function getCardinalNumberWithNounQuestionAndAnswer(){ //TODO divide into two fu
 
     if (questionNumber <= 9) {
         answer = cardinalNumbers["ones"][questionNumber];
+        if (ones == 1) {
+            answer = onesArray[gender];
+        } else if (ones == 2) {
+            answer = twosArray[gender];
+        } else {
+            answer =  cardinalNumbers["ones"][questionNumber];
+        }
+
     } else if (questionNumber <= 19) {
         answer = cardinalNumbers["teens"][questionNumber];
         isATeen = true;
@@ -14,7 +26,13 @@ function getCardinalNumberWithNounQuestionAndAnswer(){ //TODO divide into two fu
         answer = cardinalNumbers["ties"][Math.floor(questionNumber/10)*10];
         if (questionNumber % 10 !== 0) {
             var ones = questionNumber % 10;
-            answer += " " + cardinalNumbers["ones"][ones];
+            if (ones == 1) {
+                answer = " " + onesArray[gender];
+            } else if (ones == 2) {
+                answer += " " + twosArray[gender];
+            } else {
+                answer += " " + cardinalNumbers["ones"][ones];
+            }
         }
     }
     
@@ -26,6 +44,6 @@ function getCardinalNumberWithNounQuestionAndAnswer(){ //TODO divide into two fu
     } else {
        answer += " " + nounSet[2];
     }
-
+    
     return [question, answer];
 }
