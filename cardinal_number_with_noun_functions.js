@@ -1,31 +1,34 @@
-function getCardinalNumberWithNounQuestionAndAnswer(){ //TODO divide into two functions to make it testable (and more usable)
-    // 0-masculine, 1-feminine, 2-neuter
-    var gender = Math.floor(Math.random() * 3); 
+function getCardinalNumberWithNounQuestionAndAnswer(){
+    var questionData = getCardinalNumberWithNounQuestion();
+    var question = questionData[0] + " ☓" + questionData[1];
+    var answer = getCardinalNumberWithNounAnswer(questionData[0], questionData[1]);
+    return [question, answer];
+}
+
+function getCardinalNumberWithNounAnswer(noun, number){
+    var gender = checkGender(noun);    
     var onesArray = ["jedan", "jedna", "jedno"];
     var twosArray = ["dva", "dvije", "dva"];
-    var nounSet = nounsWithCases[gender][Math.floor(Math.random() * nounsWithCases.length)];
-    var questionNumber = Math.floor(Math.random() * 99) + 1;
-    var question = nounSet[0] + " ☓" + questionNumber;
     var answer;
     var isATeen = false;
 
-    if (questionNumber <= 9) {
-        answer = cardinalNumbers["ones"][questionNumber];
+    if (number <= 9) {
+        answer = cardinalNumbers["ones"][number];
         if (ones == 1) {
             answer = onesArray[gender];
         } else if (ones == 2) {
             answer = twosArray[gender];
         } else {
-            answer =  cardinalNumbers["ones"][questionNumber];
+            answer =  cardinalNumbers["ones"][number];
         }
 
-    } else if (questionNumber <= 19) {
-        answer = cardinalNumbers["teens"][questionNumber];
+    } else if (number <= 19) {
+        answer = cardinalNumbers["teens"][number];
         isATeen = true;
     } else {
-        answer = cardinalNumbers["ties"][Math.floor(questionNumber/10)*10];
-        if (questionNumber % 10 !== 0) {
-            var ones = questionNumber % 10;
+        answer = cardinalNumbers["ties"][Math.floor(number/10)*10];
+        if (number % 10 !== 0) {
+            var ones = number % 10;
             if (ones == 1) {
                 answer = " " + onesArray[gender];
             } else if (ones == 2) {
@@ -36,14 +39,33 @@ function getCardinalNumberWithNounQuestionAndAnswer(){ //TODO divide into two fu
         }
     }
     
-    lastDigit = questionNumber % 10;
+    lastDigit = number % 10;
     if (lastDigit === 2 || lastDigit === 3 || lastDigit === 4) {
-        answer += " " + nounSet[1];
+        answer += " " + nounsWithCases[genderArray[gender]][noun][0];
     } else if (!isATeen && lastDigit == 1) {
-       answer += " " + nounSet[0];
+       answer += " " + noun;
     } else {
-       answer += " " + nounSet[2];
+       answer += " " + nounsWithCases[genderArray[gender]][noun][1];
     }
     
-    return [question, answer];
+    return answer;
+}
+
+
+function getCardinalNumberWithNounQuestion(){
+    var gender = genderArray[Math.floor(Math.random() * 3)];
+    var nounsArray = Object.keys(nounsWithCases[gender]);
+    var noun = nounsArray[Math.floor(Math.random() * nounsArray.length)];
+    var number = Math.floor(Math.random() * 99) + 1;
+    return [noun, number]
+}
+
+function checkGender(noun){
+   if (masculineNouns.includes(noun)) { 
+       return 0; 
+   } else if (feminineNouns.includes(noun)){
+       return 1;
+   } else {
+       return 2;
+   }
 }
