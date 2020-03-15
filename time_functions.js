@@ -18,10 +18,13 @@ function getTimeQuestionAndAnswer(){
 
 function getTimeAnswer([hour, minutes]) {
     var answer = "";
+    var hourIsATeen = false;
+    var minutesAreATeen = false;
 
     if (hour <= 9) {
         answer += cardinalNumbers["ones"][hour];
     } else if (hour <= 19) {
+        hourIsATeen = true;
         answer += cardinalNumbers["teens"][hour];
     } else if (hour <= 99) {
         answer += "dvadeset";
@@ -30,26 +33,27 @@ function getTimeAnswer([hour, minutes]) {
         }
     } 
     
-    if (hour % 10 === 1) {
-        answer += " sat ";
-    } else if (hour % 10 === 2 || hour % 10 === 3 || hour % 10 === 4) {
-        answer += " sata ";
+    if (hour % 10 === 1 && !hourIsATeen) {
+        answer += " sat";
+    } else if (!hourIsATeen && (hour % 10 === 2 || hour % 10 === 3 || hour % 10 === 4)) {
+        answer += " sata";
     } else {
-        answer += " sati ";
+        answer += " sati";
     }
 
     if (minutes <= 9) {
         if (minutes == 1) {
             answer += " jedna";
-        } else if (answer == 2) {
+        } else if (minutes == 2) {
             answer += " dvije";
         } else {
             answer += " " + cardinalNumbers["ones"][minutes];
         }
     } else if (minutes <= 19) {
-        answer += cardinalNumbers["teens"][minutes];
+        minutesAreATeen = true;
+        answer += " " + cardinalNumbers["teens"][minutes];
     } else if (minutes <= 99) {
-        answer += cardinalNumbers["ties"][Math.floor(minutes/10)*10];
+        answer += " " + cardinalNumbers["ties"][Math.floor(minutes/10)*10];
         if (minutes % 10 !== 0) {
             var ones = minutes % 10;
             if (ones == 1) {
@@ -62,7 +66,7 @@ function getTimeAnswer([hour, minutes]) {
         }
     } 
 
-    if (minutes % 10 === 2 || minutes % 10 === 3 || minutes % 10 === 4) {
+    if (!minutesAreATeen && (minutes % 10 === 2 || minutes % 10 === 3 || minutes % 10 === 4)) {
         answer += " minute";
     } else {
         answer += " minuta";

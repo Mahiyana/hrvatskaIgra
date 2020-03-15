@@ -179,7 +179,25 @@ var dateTestCases = [
 ]
 
 var timeTestCases = [
-    [[7,29], "sedam sati dvadeset devet minuta"],
+    [[1,1], "jedan sat jedna minuta"],
+    [[2,2], "dva sata dvije minute"],
+    [[3,3], "tri sata tri minute"],
+    [[4,4], "četiri sata četiri minute"],
+    [[5,5], "pet sati pet minuta"],
+    [[6,6], "šest sati šest minuta"],
+    [[11,11], "jedanaest sati jedanaest minuta"],
+    [[12,12], "dvanaest sati dvanaest minuta"],
+    [[13,13], "trinaest sati trinaest minuta"],
+    [[14,14], "četrnaest sati četrnaest minuta"],
+    [[15,15], "petnaest sati petnaest minuta"],
+    [[16,16], "šesnaest sati šesnaest minuta"],
+    [[17,17], "sedamnaest sati sedamnaest minuta"],
+    [[18,18], "osamnaest sati osamnaest minuta"],
+    [[19,19], "devetnaest sati devetnaest minuta"],
+    [[20,20], "dvadeset sati dvadeset minuta"],
+    [[21,21], "dvadeset jedan sat dvadeset jedna minuta"],
+    [[22,22], "dvadeset dva sata dvadeset dvije minute"],
+    [[23,23], "dvadeset tri sata dvadeset tri minute"],
 ]
 
 try {
