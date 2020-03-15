@@ -164,7 +164,18 @@ var cardinalNumbersWithNounTestCases = [
 
 
 var dateTestCases = [
-    [[24,2,1672], "dvadeset četvrti veljače tisuću šesto sedamdeset druge"],
+    [[1,1,1111], "prvi siječanja tisuću sto jedanaeste"],
+    [[2,2,1220], "drugi veljače tisuću dvjesto dvadesete"],
+    [[3,3,1313], "treći ožujaka tisuću tristo trinaeste"],
+    [[4,4,1441], "četvrti travanja tisuću četiristo četrdeset prve"],
+    [[5,5,1515], "peti svibanja tisuću petsto petnaeste"],
+    [[6,6,1616], "šesti lipanja tisuću šesto šesnaeste"],
+    [[7,7,1717], "sedmi srpanja tisuću sedamsto sedamnaeste"],
+    [[8,8,1818], "osmi kolovoza tisuću osamsto osamnaeste"],
+    [[9,9,1919], "deveti rujana tisuću devetsto devetnaeste"],
+    [[20,10,2001], "dvadeseti listopada dvije tisuće prve"],
+    [[21,11,2222], "dvadeset prvi studenoga dvije tisuće dvjesto dvadeset druge"],
+    [[22,12,2013], "dvadeset drugi prosinaca dvije tisuće trinaeste"],
 ]
 
 var timeTestCases = [

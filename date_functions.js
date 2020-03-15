@@ -38,22 +38,23 @@ function getDateAnswer([day, month, year]){
         if (year < 2000) { 
             answer += "tisuću ";
         } else {
-            answer += "dvije tisuća "
+            answer += "dvije tisuće "
         }
         year = year % 1000
         if (year > 99){
-            answer += cardinalNumbers["hundreds"][Math.floor(year/100)*100];
+            answer += cardinalNumbers["hundreds"][Math.floor(year/100)*100] + " ";
         }
         var ties = Math.floor((year - Math.floor(year/100)*100)/10)*10
         if (ties !== 0 && year % 100 !== 0 && ties !== 10) {
-            answer += " " + cardinalNumbers["ties"][ties];
+            answer += cardinalNumbers["ties"][ties] + " ";
         } else if (ties !== 0 && year % 100 !== 0) {
-           answer += " " + cardinalNumbers["teens"][year % 100];
+           answer += cardinalNumbers["teens"][year % 100];
         }
         if (year % 10 !== 0 && ties !== 10) {
             var ones = year - Math.floor(year/10)*10;
-            answer += " " + ordinalNumbers["ones"][ones];
+            answer +=   ordinalNumbers["ones"][ones];
         }
+        answer = answer.trim();
         answer += "e";
     }
     return answer;
