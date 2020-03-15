@@ -79,6 +79,5 @@ function getCardinalNumberAnswer(question){
 }
 
 try {
-    module.exports.getCardinalNumberLessThan999 = getCardinalNumberLessThan999;
     module.exports.getCardinalNumberAnswer = getCardinalNumberAnswer;
 } catch (e) {}

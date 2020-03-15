@@ -1,3 +1,13 @@
+try {
+    var data = require('./data');
+    var cardinalNumbers = data.cardinalNumbers;
+    var masculineNouns = data.masculineNouns;
+    var feminineNouns = data.feminineNouns;
+    var neuterNouns = data.neuterNouns;
+    var nounsWithCases = data.nounsWithCases;
+    var genderArray = data.genderArray;
+} catch (e) {}
+
 function getCardinalNumberWithNounQuestionAndAnswer(){
     var questionData = getCardinalNumberWithNounQuestion();
     var question = questionData[0] + " ☓" + questionData[1];
@@ -5,7 +15,7 @@ function getCardinalNumberWithNounQuestionAndAnswer(){
     return [question, answer];
 }
 
-function getCardinalNumberWithNounAnswer(noun, number){
+function getCardinalNumberWithNounAnswer([noun, number]){
     var gender = checkGenderCNWN(noun);    
     var onesArray = ["jedan", "jedna", "jedno"];
     var twosArray = ["dva", "dvije", "dva"];
@@ -69,3 +79,7 @@ function checkGenderCNWN(noun){
        return 2;
    }
 }
+
+try {
+    module.exports.getCardinalNumberWithNounAnswer = getCardinalNumberWithNounAnswer;
+} catch (e) {}

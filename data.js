@@ -150,8 +150,8 @@ try {
     module.exports.masculineNouns = masculineNouns;
     module.exports.feminineNouns = feminineNouns;
     module.exports.neuterNouns = neuterNouns;
-    module.exports.ordinableNouns = nordinableNouns;
+    module.exports.ordinableNouns = ordinableNouns;
     module.exports.ordinalNumbers = ordinalNumbers;
     module.exports.numberMorpheme = numberMorpheme;
-    module.exports.monthsInGenitive = monthsInGenitive;
+    module.exports.monthsInGenitiv = monthsInGenitiv;
 } catch (e) {}

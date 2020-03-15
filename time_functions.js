@@ -1,3 +1,10 @@
+try {
+    var data = require('./data');
+    var cardinalNumbers = data.cardinalNumbers;
+} catch (e) {}
+
+
+
 function getTimeQuestionAndAnswer(){
     var questionNumbers = getTimeQuestion();
     var questionString = questionNumbers[1];
@@ -9,7 +16,7 @@ function getTimeQuestionAndAnswer(){
     return [question, answer];
 }
 
-function getTimeAnswer(hour, minutes) {
+function getTimeAnswer([hour, minutes]) {
     var answer = "";
 
     if (hour <= 9) {
@@ -56,9 +63,9 @@ function getTimeAnswer(hour, minutes) {
     } 
 
     if (minutes % 10 === 2 || minutes % 10 === 3 || minutes % 10 === 4) {
-        answer += " minute ";
+        answer += " minute";
     } else {
-        answer += " minuta ";
+        answer += " minuta";
     }
 
     return answer;
@@ -75,3 +82,7 @@ function getTimeQuestion(){
     }
     return [hour, minutes];
 }
+
+try {
+    module.exports.getTimeAnswer = getTimeAnswer;
+} catch (e) {}

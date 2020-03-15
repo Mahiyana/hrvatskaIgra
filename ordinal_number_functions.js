@@ -1,11 +1,20 @@
+try {
+    var data = require('./data');
+    var ordinableNouns = data.ordinableNouns;
+    var cardinalNumbers = data.cardinalNumbers;
+    var ordinalNumbers = data.ordinalNumbers;
+    var numberMorpheme = data.numberMorpheme;
+} catch (e) {}
+
+
 function getOrdinalNumberQuestionAndAnswer(){
     var questionData = getOrdinalNumberQuestion();
     var question = questionData[0] + ". " + questionData[1];
-    var answer = getOrdinalNumberAnswer(questionData[0], questionData[1]);
+    var answer = getOrdinalNumberAnswer([questionData[0], questionData[1]]);
     return [question, answer]
 }
 
-function getOrdinalNumberAnswer(noun, number){
+function getOrdinalNumberAnswer([noun, number]){
     var answer;
     var gender = checkGenderON(noun);
     
@@ -69,4 +78,6 @@ function checkGenderON(noun){
    }
 }
 
-
+try {
+    module.exports.getOrdinalNumberAnswer = getOrdinalNumberAnswer;
+} catch (e) {}

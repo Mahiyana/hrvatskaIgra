@@ -1,3 +1,12 @@
+try {
+    var data = require('./data');
+    var cardinalNumbers = data.cardinalNumbers;
+    var ordinalNumbers = data.ordinalNumbers;
+    var monthsInGenitiv = data.monthsInGenitiv;
+} catch (e) {}
+
+
+
 function getDateQuestionAndAnswer(){
     var dateQuestion = getDateQuestion();
     var day = dateQuestion.getDate() + 1;
@@ -8,7 +17,7 @@ function getDateQuestionAndAnswer(){
     return [question, answer];
 }
 
-function getDateAnswer(day, month, year){
+function getDateAnswer([day, month, year]){
     var answer;
     if (day <= 9) {
         answer = ordinalNumbers["ones"][day];
@@ -57,3 +66,6 @@ function getDateQuestion(){
     return date;
 }
 
+try {
+    module.exports.getDateAnswer = getDateAnswer;
+} catch (e) {}
