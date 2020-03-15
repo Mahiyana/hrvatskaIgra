@@ -24,9 +24,9 @@ function getCardinalNumberWithNounAnswer([noun, number]){
 
     if (number <= 9) {
         answer = cardinalNumbers["ones"][number];
-        if (ones == 1) {
+        if (number == 1) {
             answer = onesArray[gender];
-        } else if (ones == 2) {
+        } else if (number == 2) {
             answer = twosArray[gender];
         } else {
             answer =  cardinalNumbers["ones"][number];
@@ -40,7 +40,7 @@ function getCardinalNumberWithNounAnswer([noun, number]){
         if (number % 10 !== 0) {
             var ones = number % 10;
             if (ones == 1) {
-                answer = " " + onesArray[gender];
+                answer += " " + onesArray[gender];
             } else if (ones == 2) {
                 answer += " " + twosArray[gender];
             } else {
@@ -50,7 +50,7 @@ function getCardinalNumberWithNounAnswer([noun, number]){
     }
     
     lastDigit = number % 10;
-    if (lastDigit === 2 || lastDigit === 3 || lastDigit === 4) {
+    if (!isATeen && (lastDigit === 2 || lastDigit === 3 || lastDigit === 4)) {
         answer += " " + nounsWithCases[genderArray[gender]][noun][0];
     } else if (!isATeen && lastDigit == 1) {
        answer += " " + noun;
