@@ -97,8 +97,8 @@ var ordinalNumbers = {
         "4": "četvrt",
         "5": "pet",
         "6": "šest",
-        "7": "sedam",
-        "8": "osam",
+        "7": "sedm",
+        "8": "osm",
         "9": "devet",
     },
     "hundreds": {
@@ -113,16 +113,16 @@ var ordinalNumbers = {
        "900": "devetstoti",
     },
     "thousands": {
-        "1000": "tisićit",
-        "2000": "dvije tisićit",
-        "3000": "tri tisićit",
-        "4000": "četiri tisićit",
-        "5000": "pet tisićit",
-        "6000": "šest tisićit",
-        "7000": "sedam tisićit",
-        "8000": "osam tisićit",
-        "9000": "devet tisićit",
-        "10000": "deset tisićit",
+        "1000": "tisućit",
+        "2000": "dvije tisućit",
+        "3000": "tri tisućit",
+        "4000": "četiri tisućit",
+        "5000": "pet tisućit",
+        "6000": "šest tisućit",
+        "7000": "sedam tisućit",
+        "8000": "osam tisućit",
+        "9000": "devet tisućit",
+        "10000": "deset tisućit",
     }
 }
 

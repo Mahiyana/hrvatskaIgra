@@ -30,13 +30,13 @@ function getOrdinalNumberAnswer([noun, number]){
             }
         } 
     } else if (number < 1000) {
-        answer = ordinalNumbers["hundreds"][question];
+        answer = ordinalNumbers["hundreds"][number];
     } else {
-        answer = ordinalNumbers["thousands"][question];
+        answer = ordinalNumbers["thousands"][number];
     }    
 
     if (gender == 2  && number % 10 === 3 && number != 13) {
-        answer += "e ";
+        answer += "e";
     } else {
         answer += numberMorpheme[gender] ;
     }
