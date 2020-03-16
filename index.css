@@ -7,9 +7,9 @@ body {
 }
 
 .container {
-  background-color: white;
-  opacity: 0.95;
+  background-color: rgba(0,0,0,0.5);
   border-radius: 25px;
+  color: white;
 }
 
 .vertical-center {
@@ -25,11 +25,11 @@ body {
 }
 
 #menu-button-0 {
-  background-color: #2d8659;
+  background-color: #b4eaad;
 }
 
 .under-menu-button {
-  background-color: #66cc99;
+  background-color: #28a745;
   border-radius: 25px;
   width: 100px;
   margin-bottom: 10px;
@@ -41,7 +41,7 @@ body {
 
 #points-div {
   margin: 5px 25% 0 25%;
-  background-color: #99e699;
+  background-color: #28a745;
   border-radius: 10px;
 }
 
@@ -64,10 +64,11 @@ input:focus {
 
 #check-button, #next-button {
   width: 40%;
+  border: none;
 }
 
 #answer-card {
-  background-color: #f0f0f5;
+  background-color: #131313;
   border-radius: 15px;
   position: absolute;
   top: 0;

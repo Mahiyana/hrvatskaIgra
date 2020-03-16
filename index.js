@@ -23,8 +23,8 @@ var questionSentence = {
 }
 
 function changeMode(newMode){
-    document.getElementById("menu-button-" + menuMode).style['background']  = "#66cc99";
-    document.getElementById("menu-button-" + newMode).style['background']  = "#2d8659";
+    document.getElementById("menu-button-" + menuMode).style['background']  = "#28a745";
+    document.getElementById("menu-button-" + newMode).style['background']  = "#b4eaad";
     menuMode = newMode;
     reloadQuestion();
 }
