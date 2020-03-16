@@ -12,7 +12,7 @@ function getTimeQuestionAndAnswer(){
         questionString = "0" + questionString;
     }
     var question = questionNumbers[0] + ":" + questionString;
-    var answer = getTimeAnswer(questionNumbers[0], questionNumbers[1]);
+    var answer = getTimeAnswer([questionNumbers[0], questionNumbers[1]]);
     return [question, answer];
 }
 

@@ -11,7 +11,7 @@ try {
 function getCardinalNumberWithNounQuestionAndAnswer(){
     var questionData = getCardinalNumberWithNounQuestion();
     var question = questionData[0] + " ☓" + questionData[1];
-    var answer = getCardinalNumberWithNounAnswer(questionData[0], questionData[1]);
+    var answer = getCardinalNumberWithNounAnswer([questionData[0], questionData[1]]);
     return [question, answer];
 }
 

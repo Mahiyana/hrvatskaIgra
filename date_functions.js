@@ -13,7 +13,7 @@ function getDateQuestionAndAnswer(){
     var month = dateQuestion.getMonth();
     var year = dateQuestion.getFullYear();
     var question = day + "." + month + "." + year;
-    var answer = getDateAnswer(day, month, year);
+    var answer = getDateAnswer([day, month, year]);
     return [question, answer];
 }
 
