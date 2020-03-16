@@ -9,7 +9,7 @@ try {
 
 function getOrdinalNumberQuestionAndAnswer(){
     var questionData = getOrdinalNumberQuestion();
-    var question = questionData[0] + ". " + questionData[1];
+    var question = questionData[1] + ". " + questionData[0];
     var answer = getOrdinalNumberAnswer([questionData[0], questionData[1]]);
     return [question, answer]
 }
