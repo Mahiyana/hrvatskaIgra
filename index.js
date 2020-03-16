@@ -4,6 +4,8 @@ var menuMode = 0;
 var question;
 var properAnswer;
 
+var answerCardVisible = false;
+
 // modes:
 // 0 - cardinal numbers
 // 1 - ordinal numbers
@@ -50,15 +52,30 @@ function getQuestionAndAnswer(mode){
 
 
 function checkAnswer(){
+   console.log("checking");
     userAnswer = document.getElementById("user-answer").value.trim();
     if (userAnswer == properAnswer) {
         var points = parseInt(document.getElementById("points").innerHTML);
         points += 1;
         document.getElementById("points").innerHTML = points;
+        reloadQuestion();
     } 
     else {
-        alert("Dobar odgovor je: " + properAnswer + "!");
+        showAnswerCard(userAnswer);
     }
+}
+
+function showAnswerCard(userAnswer) {
+    document.getElementById("check-button").blur();
+    document.getElementById("answer-card").style["visibility"]  = "visible";
+    document.getElementById("user-answer-card").innerHTML = userAnswer;
+    document.getElementById("proper-answer-card").innerHTML = properAnswer;
+    answerCardVisible = true;
+}
+
+function closeAnswerCard() {
+    document.getElementById("answer-card").style["visibility"]  = "hidden";
+    answerCardVisible = false;
     reloadQuestion();
 }
 
@@ -76,12 +93,15 @@ function reloadQuestion(){
 }
 
 function initialize(){
-    document.getElementById("user-answer").addEventListener("keyup", function(event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            checkAnswer();
+    document.addEventListener("keypress", function(event) {
+        if (event.keyCode == 13) {
+            if (!answerCardVisible) {
+                checkAnswer();
+            } else {
+                closeAnswerCard();
+            }
         }
-    });
+    })
     reloadQuestion();
 }
 

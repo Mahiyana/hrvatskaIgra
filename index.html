@@ -23,7 +23,15 @@
                 </div>
   
                 <div class="col-11 center-block" id="not-menu-div">
-                     
+                    <div id="answer-card">
+                        <div class="answer-card-text">Tvoj odgovor:</div>
+                        <div class="answer-card-text text-center" id="user-answer-card"></div>
+                        <div class="answer-card-text">Dobar odgovor:</div>
+                        <div class="answer-card-text text-center" id="proper-answer-card"></div>
+                        <div class="text-center">
+                            <button id="next-button" class="btn-lg btn-success" onClick="closeAnswerCard()" type="button">Dalje</button> 
+                        </div>
+                    </div> 
                     <div id="question-card" class="align middle">
                         <div id="question-div">
                             <p class="text-center" id="question-sentence"></p>
@@ -37,7 +45,6 @@
                                 <button class="letter-button btn btn-success" onClick="writeLetter('š')" type="button">Š</button> 
                                 <button class="letter-button btn btn-success" onClick="writeLetter('ž')" type="button">Ž</button> 
                                 <button class="letter-button btn btn-success" onClick="writeLetter('đ')" type="button">Đ</button> 
-
                             </div>
                             <div id="buttons-div">
                                 <button id="check-button" class="btn-lg btn-success" onClick="checkAnswer()" type="button">Ček</button> 
