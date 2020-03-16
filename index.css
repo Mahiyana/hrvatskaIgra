@@ -54,6 +54,11 @@ body {
   width: 60%;
 }
 
+input:focus {
+  border-color: #28A745;
+  border-radius: 5px;
+}
+
 #check-button {
   width: 40%;
 }
