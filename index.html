@@ -1,35 +1,51 @@
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
 <body>
-    <div id="menu-div">
-        <div class="menu-item" onClick="changeMode(0)"><img src="img/numbers_main.png"/></div>
-        <div class="menu-item" onClick="changeMode(1)"><img src="img/numbers_ordinal.png"/></div>
-        <div class="menu-item" onClick="changeMode(2)"><img src="img/numbers_counters.png"/></div>
-        <div class="menu-item" onClick="changeMode(3)"><img src="img/numbers_dates.png"/></div>
-        <div class="menu-item" onClick="changeMode(4)"><img src="img/numbers_time.png"/></div>
-        <div class="menu-item" onClick="changeMode(5)"><img src="img/numbers_mix.png"/></div>
-        <div id="points-div"><p id="points">0</p></div>
-    </div>
-   
-    <div id="question-div">
-        <p id="question-sentence"></p>
-        <p id="question"></p>
-    </div>
+    <div class="vertical-center">
+        <div class="container">
+            <div id="points-div" class="text-center"><p id="points">0</p></div>
+            <div class="row justify-content-center align-items-center">
+                <div class="col-1" id="menu-div">
+                    <div><img class="pointer" onClick="changeMode(0)" src="img/numbers_main.png"/></div>
+                    <div><img class="pointer" onClick="changeMode(1)" src="img/numbers_ordinal.png"/></div>
+                    <div><img class="pointer" onClick="changeMode(2)" src="img/numbers_counters.png"/></div>
+                    <div><img class="pointer" onClick="changeMode(3)" src="img/numbers_dates.png"/></div>
+                    <div><img class="pointer" onClick="changeMode(4)" src="img/numbers_time.png"/></div>
+                    <div><img class="pointer" onClick="changeMode(5)" src="img/numbers_mix.png"/></div>
+                </div>
+  
+                <div class="col-11 center-block" id="not-menu-div">
+                     
+                    <div id="question-card" class="align middle">
+                        <div id="question-div">
+                            <p class="text-center" id="question-sentence"></p>
+                            <p class="text-center" id="question"></p>
+                        </div>
 
-    <div id="inputs-div">
-        <div id="answer-div">
-            <input type="text" id="userAnswer" name="answer" autofocus>
-        </div>
-        <div id="buttons-div">
-            <button class="letter-button" onClick="writeLetter('č')" type="button">Č</button> 
-            <button class="letter-button" onClick="writeLetter('š')" type="button">Š</button> 
-            <button class="letter-button" onClick="writeLetter('ž')" type="button">Ž</button> 
-            <button class="letter-button" onClick="writeLetter('đ')" type="button">Đ</button> 
-            <button id="check-button" onClick="checkAnswer()" type="button">Ček</button> 
+                        <div id="inputs-div" class="text-center">
+                            <div id="answer-div">
+                                <input type="text" id="userAnswer" name="answer" autofocus>
+                                <button class="letter-button" onClick="writeLetter('č')" type="button">Č</button> 
+                                <button class="letter-button" onClick="writeLetter('š')" type="button">Š</button> 
+                                <button class="letter-button" onClick="writeLetter('ž')" type="button">Ž</button> 
+                                <button class="letter-button" onClick="writeLetter('đ')" type="button">Đ</button> 
+
+                            </div>
+                            <div id="buttons-div">
+                                <button id="check-button" onClick="checkAnswer()" type="button">Ček</button> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
     <script type="text/javascript" src="data.js"></script> 
     <script type="text/javascript" src="cardinal_number_functions.js"></script> 
     <script type="text/javascript" src="ordinal_number_functions.js"></script> 
@@ -37,6 +53,5 @@
     <script type="text/javascript" src="date_functions.js"></script> 
     <script type="text/javascript" src="time_functions.js"></script> 
     <script type="text/javascript" src="index.js"></script> 
-    <link rel="stylesheet" type="text/css" href="index.css">
 </body>
 </html>
