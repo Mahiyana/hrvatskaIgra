@@ -28,9 +28,9 @@ function changeMode(newMode){
 }
 
 function writeLetter(letter){ //TODO change to writing where the cursor is instead of appending at the end
-    currentAnswer = document.getElementById("userAnswer").value;
-    document.getElementById("userAnswer").value = currentAnswer + letter;
-    document.getElementById("userAnswer").focus();
+    currentAnswer = document.getElementById("user-answer").value;
+    document.getElementById("user-answer").value = currentAnswer + letter;
+    document.getElementById("user-answer").focus();
 }
 
 function getQuestionAndAnswer(mode){
@@ -50,7 +50,7 @@ function getQuestionAndAnswer(mode){
 
 
 function checkAnswer(){
-    userAnswer = document.getElementById("userAnswer").value.trim();
+    userAnswer = document.getElementById("user-answer").value.trim();
     if (userAnswer == properAnswer) {
         var points = parseInt(document.getElementById("points").innerHTML);
         points += 1;
@@ -71,12 +71,12 @@ function reloadQuestion(){
     
     document.getElementById("question-sentence").innerHTML = questionSentence[modeForQuestions];
     document.getElementById("question").innerHTML = question;
-    document.getElementById("userAnswer").value = "";
-    document.getElementById("userAnswer").focus();
+    document.getElementById("user-answer").value = "";
+    document.getElementById("user-answer").focus();
 }
 
 function initialize(){
-    document.getElementById("userAnswer").addEventListener("keyup", function(event) {
+    document.getElementById("user-answer").addEventListener("keyup", function(event) {
         if (event.keyCode === 13) {
             event.preventDefault();
             checkAnswer();

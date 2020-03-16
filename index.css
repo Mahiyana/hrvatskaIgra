@@ -45,3 +45,15 @@ body {
 #question {
   font-size: 45px;
 }
+
+#answer-div {
+  margin-bottom: 20px;
+}
+
+#user-answer {
+  width: 60%;
+}
+
+#check-button {
+  width: 40%;
+}
