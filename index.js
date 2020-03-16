@@ -21,6 +21,8 @@ var questionSentence = {
 }
 
 function changeMode(newMode){
+    document.getElementById("menu-button-" + menuMode).style['background']  = "#66cc99";
+    document.getElementById("menu-button-" + newMode).style['background']  = "#2d8659";
     menuMode = newMode;
     reloadQuestion();
 }

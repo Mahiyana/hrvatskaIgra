@@ -21,6 +21,17 @@ body {
   cursor: pointer;
 }
 
+#menu-button-0 {
+  background-color: #2d8659;
+}
+
+.under-menu-button {
+  background-color: #66cc99;
+  border-radius: 25px;
+  width: 100px;
+  margin-bottom: 10px;
+}
+
 #points {
   font-size: 30px;
 }
