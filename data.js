@@ -57,7 +57,7 @@ var nounsWithCases = {
         "park": ["parka", "parkova"],
         "student": ["studenta", "studenata"],
         "čovjek": ["čovjeka", "ljudi"],
-        "majmum": ["majmuna", "majmuna"],
+        "majmun": ["majmuna", "majmuna"],
         "metar": ["metra", "metara"], 
     },
     "feminine": {
