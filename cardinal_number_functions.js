@@ -66,7 +66,7 @@ function getCardinalNumberAnswer(question){
             answer += " tisuća";
         } else if (lastDigit === 2 || lastDigit === 3 || lastDigit === 4) {
             answer += " tisuće";
-        } else if (secondPart != 0) {
+        } else if (secondPart != 0 && question < 2000) {
             answer += " tisuću";
         } else {
             answer += " tisuća";

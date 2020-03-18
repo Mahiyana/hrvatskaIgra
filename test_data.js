@@ -29,6 +29,7 @@ var cardinalNumbersTestCases = [
     [1977, "tisuću devetsto sedamdeset sedam"],
     [2000, "dvije tisuće"],
     [2123, "dvije tisuće sto dvadeset tri"],
+    [21123, "dvadeset jedna tisuća sto dvadeset tri"],
     [22123, "dvadeset dvije tisuće sto dvadeset tri"],
     [222123, "dvjesto dvadeset dvije tisuće sto dvadeset tri"],
     [50, "pedeset"],
