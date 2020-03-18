@@ -2,6 +2,7 @@
 <html>
 <meta charset="UTF-8">
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
@@ -14,12 +15,12 @@
             </div>
             <div class="row justify-content-center align-items-center">
                 <div class="col-1" id="menu-div">
-                    <div id="menu-button-0" class="under-menu-button pointer" onClick="changeMode(0)"><img src="img/numbers_main.png"/></div>
-                    <div id="menu-button-1" class="under-menu-button pointer" onClick="changeMode(1)"><img src="img/numbers_ordinal.png"/></div>
-                    <div id="menu-button-2" class="under-menu-button pointer" onClick="changeMode(2)"><img src="img/numbers_counters.png"/></div>
-                    <div id="menu-button-3" class="under-menu-button pointer" onClick="changeMode(3)"><img src="img/numbers_dates.png"/></div>
-                    <div id="menu-button-4" class="under-menu-button pointer" onClick="changeMode(4)"><img src="img/numbers_time.png"/></div>
-                    <div id="menu-button-5" class="under-menu-button pointer" onClick="changeMode(5)"><img src="img/numbers_mix.png"/></div>
+                    <div id="menu-button-0" class="under-menu-button active-menu-button" onClick="changeMode(0)"><img src="img/numbers_main.png"/></div>
+                    <div id="menu-button-1" class="under-menu-button inactive-menu-button" onClick="changeMode(1)"><img src="img/numbers_ordinal.png"/></div>
+                    <div id="menu-button-2" class="under-menu-button inactive-menu-button" onClick="changeMode(2)"><img src="img/numbers_counters.png"/></div>
+                    <div id="menu-button-3" class="under-menu-button inactive-menu-button" onClick="changeMode(3)"><img src="img/numbers_dates.png"/></div>
+                    <div id="menu-button-4" class="under-menu-button inactive-menu-button" onClick="changeMode(4)"><img src="img/numbers_time.png"/></div>
+                    <div id="menu-button-5" class="under-menu-button inactive-menu-button" onClick="changeMode(5)"><img src="img/numbers_mix.png"/></div>
                 </div>
   
                 <div class="col-11 center-block" id="not-menu-div">
@@ -29,7 +30,7 @@
                         <div class="answer-card-text">Dobar odgovor:</div>
                         <div class="answer-card-text text-center" id="proper-answer-card"></div>
                         <div class="text-center">
-                            <button id="next-button" class="btn-lg btn-success" onClick="closeAnswerCard()" type="button">Dalje</button> 
+                            <button id="next-button" class="btn-lg btn-success navigation-button" onClick="closeAnswerCard()" type="button">Dalje</button> 
                         </div>
                     </div> 
                     <div id="question-card" class="align middle">
@@ -47,7 +48,7 @@
                                 <button class="letter-button btn btn-success" onClick="writeLetter('đ')" type="button">Đ</button> 
                             </div>
                             <div id="buttons-div">
-                                <button id="check-button" class="btn-lg btn-success" onClick="checkAnswer()" type="button">Ček</button> 
+                                <button id="check-button" class="btn-lg btn-success navigation-button" onClick="checkAnswer()" type="button">Ček</button> 
                             </div>
                         </div>
                     </div>

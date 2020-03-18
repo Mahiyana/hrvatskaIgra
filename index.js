@@ -23,8 +23,10 @@ var questionSentence = {
 }
 
 function changeMode(newMode){
-    document.getElementById("menu-button-" + menuMode).style['background']  = "#28a745";
-    document.getElementById("menu-button-" + newMode).style['background']  = "#b4eaad";
+    document.getElementById("menu-button-" + menuMode).classList.remove("active-menu-button");
+    document.getElementById("menu-button-" + menuMode).classList.add("inactive-menu-button");
+    document.getElementById("menu-button-" + newMode).classList.remove("inactive-menu-button");
+    document.getElementById("menu-button-" + newMode).classList.add("active-menu-button");
     menuMode = newMode;
     reloadQuestion();
 }
@@ -68,6 +70,7 @@ function checkAnswer(){
 function showAnswerCard(userAnswer) {
     document.getElementById("check-button").blur();
     document.getElementById("answer-card").style["visibility"]  = "visible";
+    document.getElementById("question-card").style["visibility"]  = "hidden";
     document.getElementById("user-answer-card").innerHTML = userAnswer;
     document.getElementById("proper-answer-card").innerHTML = properAnswer;
     answerCardVisible = true;
@@ -75,6 +78,7 @@ function showAnswerCard(userAnswer) {
 
 function closeAnswerCard() {
     document.getElementById("answer-card").style["visibility"]  = "hidden";
+    document.getElementById("question-card").style["visibility"]  = "visible";
     answerCardVisible = false;
     reloadQuestion();
 }
