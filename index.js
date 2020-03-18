@@ -96,7 +96,17 @@ function reloadQuestion(){
     document.getElementById("user-answer").focus();
 }
 
+function getCookie(name) {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length == 2) return parts.pop().split(";").shift();
+}
+
 function initialize(){
+    var cookie = getCookie("accepted-cookies");
+    if (cookie && cookie == "true") {
+        hideCookiesBanner();
+    }
     document.addEventListener("keypress", function(event) {
         if (event.keyCode == 13) {
             if (!answerCardVisible) {
@@ -107,6 +117,24 @@ function initialize(){
         }
     })
     reloadQuestion();
+}
+
+function userAcceptedCookies() {
+    //yay!
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+
+    gtag('config', 'UA-161036483-1');
+    hideCookiesBanner();
+    var expiresDate = new Date();
+    expiresDate.setTime(expiresDate.getTime() + 2592000000); //30 days
+    document.cookie = "accepted-cookies=true; expires=" + expiresDate.toUTCString();
+}
+
+function hideCookiesBanner() {
+    document.getElementById("banner").style["visibility"]  = "hidden";
 }
 
 initialize();
