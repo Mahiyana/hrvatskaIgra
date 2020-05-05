@@ -10,7 +10,7 @@ try {
 function getDateQuestionAndAnswer(){
     var dateQuestion = getDateQuestion();
     var day = dateQuestion.getDate() + 1;
-    var month = dateQuestion.getMonth();
+    var month = dateQuestion.getMonth()+1;
     var year = dateQuestion.getFullYear();
     var question = day + "." + month + "." + year;
     var answer = getDateAnswer([day, month, year]);
